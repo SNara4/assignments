@@ -1,0 +1,54 @@
+Form frmAuthenticator:
+Caption =Authenticator
+BorderStyle = 1 - Fixed Single
+
+Label Lbl1:
+Caption = "Enter password"
+
+Label Lblid:
+Caption = "Enter ID"
+
+Label  LblChanceLeft :
+Visible = False
+
+
+Label Lblstat:
+Caption=""
+Visible = False
+
+TextBox Txt1:
+Password char="*"
+Text = ""
+
+TextBox TxtId:
+Text= ""
+
+
+Command CmdBut1:
+Caption = &Signin
+
+Public Class frmAuthenticator
+    Dim i As Integer = 3
+
+    Sub CmdBut1_Click(sender As Object, e As EventArgs) Handles CmdBut1.Click
+
+        If i = 1 Then
+            End
+        ElseIf (Txt1.Text = "vb6") And (TxtId.Text = "admin") Then
+            Lblstat.Text = "Signin successful"
+            Txt1.Text = ""
+            Lblstat.ForeColor = Color.Black
+        Else
+            i -= 1
+                Lblstat.ForeColor = Color.Red
+                Lblstat.Text = "Signin unsuccessful"
+                LblChanceLeft.Text = "You have " + CStr(i) + "chances left"
+                LblChanceLeft.Visible = True
+                Txt1.Text = ""
+            End If
+            Lblstat.Visible = True
+
+    End Sub
+
+End Class
+
