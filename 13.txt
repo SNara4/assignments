@@ -1,0 +1,43 @@
+Form frmSeries:
+Caption =Series
+BorderStyle = 1 - Fixed Single
+
+Label Lbl1:
+Caption = "Enter no of terms for series"
+
+
+
+Label LblResult:
+Visible = False
+
+TextBox Txt1:
+Text = "0"
+
+
+
+Command CmdBut1:
+Caption = &Print
+
+Public Class frmGreatest
+    Sub CmdBut1_Click(sender As Object, e As EventArgs) Handles CmdBut1.Click
+        Dim a, i, j, k As Integer
+        k = 0
+
+        a = Val(Txt1.Text)
+        For i = 0 To a
+            For j = 0 To i
+                LblResult.Text = LblResult.Text + CStr(k) + " "
+                k += 1
+            Next
+            k -= 1
+            LblResult.Text = LblResult.Text + vbNewLine
+        Next
+
+
+
+
+        LblResult.Visible = True
+    End Sub
+
+End Class
+

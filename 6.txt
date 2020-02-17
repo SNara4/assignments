@@ -1,0 +1,43 @@
+Form frmSimpleInterest:
+Caption =Simple Interest
+BorderStyle = 1 - Fixed Single
+
+Label LblP:
+Caption = "Principal"
+
+Label LblR:
+Caption = "Rate"
+
+Label LblT:
+Caption = "Time"
+
+Label LblResult:
+Visible = False
+
+TextBox TxtP:
+Text = "0"
+
+TextBox TxtR:
+Text = "0"
+
+TextBox TxtT:
+Text = "0"
+
+Command CmdBut1:
+Caption = &Calculate
+
+Public Class frmSimpleInterest
+    Sub CmdBut1_Click(sender As Object, e As EventArgs) Handles CmdBut1.Click
+        Dim amount, si As Single
+
+        si = (Val(TxtP.Text) * Val(TxtR.Text) * Val(TxtT.Text)) / 100
+        amount = Val(TxtP.Text) + si
+
+
+        LblResult.Text = "The SI will be " + CStr(si) + vbNewLine + "and Amount will be" _
+            + CStr(amount)
+
+        LblResult.Visible = True
+    End Sub
+End Class
+

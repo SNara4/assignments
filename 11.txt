@@ -1,0 +1,36 @@
+Form frmOddEven:
+Caption =OddEven
+BorderStyle = 1 - Fixed Single
+
+Label Lbl1:
+Caption = "Click to print no.s
+
+Label LblOdd:
+Caption="odd no.s"
+Visible = False
+
+Label LblEven:
+Caption="even no.s"
+Visible = False
+
+Command CmdBut1:
+Caption = &Print
+
+Public Class frmOddEven
+    Sub CmdBut1_Click(sender As Object, e As EventArgs) Handles CmdBut1.Click
+        Dim i As Integer
+        For i = 1 To 20
+            If (i Mod 2) = 0 Then
+                LblEven.Text = LblEven.Text + vbNewLine + CStr(i)
+            Else
+
+                LblOdd.Text = LblOdd.Text + vbNewLine + CStr(i)
+            End If
+
+        Next
+	LblEven.visible=true
+	LblOdd.Visible=true
+    End Sub
+
+End Class
+

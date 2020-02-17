@@ -1,0 +1,29 @@
+Form frmCylinder:
+Caption =Volume of Cylinder
+BorderStyle = 1 - Fixed Single
+
+Label LblR:
+Caption = "Radius"
+
+Label Lblh:
+Caption = "Height"
+
+Label LblResult:
+Visible = False
+
+TextBox TxtRadius:
+Text = "0"
+
+TextBox TxtHeight:
+Text = "0"
+
+Command CmdBut1:
+Caption = &Volume
+
+Public Class frmCylinder
+    Sub CmdBut1_Click(sender As Object, e As EventArgs) Handles CmdBut1.Click
+        LblResult.Text = 3.14 * Val(TxtRadius.Text ^ 2) * Val(TxtHeight.Text)
+        LblResult.Visible = True
+    End Sub
+End Class
+

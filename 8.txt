@@ -1,0 +1,51 @@
+Form frmGreatest:
+Caption =Greatest
+BorderStyle = 1 - Fixed Single
+
+Label Lbl1:
+Caption = "No 1"
+
+Label Lbl2:
+Caption = "No 2"
+
+Label Lbl3:
+Caption = "No 3"
+
+Label LblResult:
+Visible = False
+
+TextBox Txt1:
+Text = "0"
+
+TextBox Txt2:
+Text = "0"
+
+TextBox Txt3:
+Text = "0"
+
+Command CmdBut1:
+Caption = &Calculate
+
+Public Class frmGreatest
+    Sub CmdBut1_Click(sender As Object, e As EventArgs) Handles CmdBut1.Click
+        Dim a, b, c, temp As Integer
+
+        a = Val(Txt1.Text)
+        b = Val(Txt2.Text)
+        c = Val(Txt3.Text)
+
+        If (a > b) And (a > c) Then
+            temp = a
+        ElseIf (b > a) And (b > c) Then
+            temp = b
+        Else
+            temp = c
+        End If
+
+        LblResult.Text = "The Greatest is: " + CStr(temp)
+
+
+        LblResult.Visible = True
+    End Sub
+End Class
+

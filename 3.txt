@@ -1,0 +1,15 @@
+Form1 FrmHello:
+BorderStyle 1-Fixed Single
+Caption Hello World
+
+
+Command CmdBut1:
+Caption &Click me
+
+
+Public Class Form1
+    Sub CmdBut1_Click()
+        MsgBox("hello form VB",, "")
+
+    End Sub
+End Class
